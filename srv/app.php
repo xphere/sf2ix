@@ -3,7 +3,7 @@
 use Symfony\Component\ClassLoader\ApcClassLoader;
 use Symfony\Component\HttpFoundation\Request;
 
-$loader = require __DIR__ . '/../lib/autoload.php';
+$loader = require __DIR__ . '/../boot/autoload.php';
 $loader = new ApcClassLoader('app-prefix', $loader);
 
 $kernel = new AppKernel('prod', false);

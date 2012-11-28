@@ -2,7 +2,7 @@
 
 use Symfony\Component\HttpFoundation\Request;
 
-require __DIR__ . '/../lib/autoload.php';
+require __DIR__ . '/../boot/autoload.php';
 
 $kernel = new AppKernel('dev', true);
 $kernel->loadClassCache();
