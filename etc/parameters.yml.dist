@@ -1,0 +1,2 @@
+parameters:
+    framework.secret: this-is-very-secure

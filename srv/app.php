@@ -1,11 +1,14 @@
 <?php
 
+use Symfony\Component\ClassLoader\ApcClassLoader;
 use Symfony\Component\HttpFoundation\Request;
 
-require __DIR__ . '/../lib/autoload.php';
+$loader = require __DIR__ . '/../lib/autoload.php';
+$loader = new ApcClassLoader('app-prefix', $loader);
 
-$kernel = new AppKernel('dev', true);
+$kernel = new AppKernel('prod', false);
 $kernel->loadClassCache();
+$kernel = new AppCache($kernel);
 
 $request = Request::createFromGlobals();
 $response = $kernel->handle($request);
