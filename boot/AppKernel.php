@@ -15,7 +15,19 @@ class AppKernel extends Kernel implements KernelInterface
 
     public function registerContainerConfiguration(LoaderInterface $loader)
     {
-        $loader->load(__DIR__ . '/../etc/' . $this->getEnvironment() . '/config.yml');
+        $loader->load($this->getConfigDir() . '/config.yml');
+    }
+
+    public function getKernelParameters()
+    {
+        $parms = parent::getKernelParameters();
+        $parms['kernel.config_dir'] = $this->getConfigDir();
+        return $parms;
+    }
+
+    public function getConfigDir()
+    {
+        return dirname(__DIR__) . '/etc/' . $this->getEnvironment();
     }
 
     public function getCacheDir()
