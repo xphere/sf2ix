@@ -20,11 +20,11 @@ class AppKernel extends Kernel implements KernelInterface
 
     public function getCacheDir()
     {
-        return __DIR__ . '/../tmp/cache/' . $this->environment;
+        return dirname(__DIR__) . '/tmp/cache/' . $this->getEnvironment();
     }
 
     public function getLogDir()
     {
-        return __DIR__ . '/../var/log';
+        return dirname(__DIR__) . '/var/log';
     }
 }
