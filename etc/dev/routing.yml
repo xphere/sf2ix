@@ -1,0 +1,4 @@
+# Routing for dev environment
+
+prod:
+    resource: "../prod/routing.yml"

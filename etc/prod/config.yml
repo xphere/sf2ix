@@ -3,3 +3,6 @@ imports:
 
 framework:
     secret: %framework.secret%
+    router:
+        resource: "%kernel.config_dir%/routing.yml"
+        strict_requirements: "%kernel.debug%"
