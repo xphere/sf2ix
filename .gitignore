@@ -1,5 +1,7 @@
 bin/
+boot/bootstrap.php.cache
 etc/parameters.yml
 lib/
+srv/bundles/
 tmp/
 var/
